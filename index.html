@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10th Result 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+
+<!-- LOGIN PAGE -->
+<div class="card show" id="loginPage">
+  <div class="logo">🎓</div>
+  <h1>10th Result 2026</h1>
+  <p class="sub">Login to see your result</p>
+  <div class="field"><span>🆔</span><input type="text" id="loginReg" placeholder="Register Number"></div>
+  <div class="field"><span>🔒</span><input type="password" id="loginPass" placeholder="Password"></div>
+  <button onclick="login()">Login</button>
+  <p class="msg" id="loginMsg"></p>
+  <p class="link">New user? <a onclick="showPage('registerPage')">Register here</a></p>
+</div>
+
+<!-- REGISTER PAGE -->
+<div class="card" id="registerPage">
+  <div class="logo">📝</div>
+  <h1>Student Registration</h1>
+  <p class="sub">Create your account</p>
+  <div class="field"><span>👤</span><input type="text" id="regName" placeholder="Full Name"></div>
+  <div class="field"><span>🆔</span><input type="text" id="regNo" placeholder="Register Number"></div>
+  <div class="field"><span>📅</span><input type="date" id="regDob"></div>
+  <div class="field"><span>🔒</span><input type="password" id="regPass" placeholder="Password (min 4)"></div>
+  <div class="field"><span>🔒</span><input type="password" id="regPass2" placeholder="Confirm Password"></div>
+  <button class="green" onclick="register()">Register</button>
+  <p class="msg" id="regMsg"></p>
+  <p class="link">Already registered? <a onclick="showPage('loginPage')">Login here</a></p>
+</div>
+
+<!-- RESULT PAGE -->
+<div class="card wide" id="resultPage">
+  <div class="top no-print">
+    <h2 id="welcome"></h2>
+    <button class="red" onclick="logout()">Logout</button>
+  </div>
+  <h1>SSLC Examination Result 2026</h1>
+  <p class="sub">Your marks statement</p>
+  <div class="info" id="info"></div>
+  <table>
+    <thead><tr><th>Subject</th><th>Max Marks</th><th>Marks Obtained</th></tr></thead>
+    <tbody id="marks"></tbody>
+  </table>
+  <div class="status" id="status"></div>
+  <button class="green no-print" onclick="window.print()">Print Result</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

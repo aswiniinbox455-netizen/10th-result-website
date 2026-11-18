@@ -1,0 +1,43 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', Arial, sans-serif; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 30px 15px; background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #6a11cb); background-size: 400% 400%; animation: bgMove 12s ease infinite; overflow-x: hidden; }
+@keyframes bgMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+.bubble { position: fixed; border-radius: 50%; background: rgba(255,255,255,0.08); animation: float 10s ease-in-out infinite; z-index: 0; }
+.b1 { width: 220px; height: 220px; top: -60px; left: -60px; }
+.b2 { width: 160px; height: 160px; bottom: 40px; right: -40px; animation-delay: 2s; }
+.b3 { width: 90px; height: 90px; top: 60%; left: 10%; animation-delay: 4s; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+.card { position: relative; z-index: 1; width: 100%; max-width: 420px; padding: 35px 30px; border-radius: 20px; background: rgba(255,255,255,0.12); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.25); box-shadow: 0 15px 40px rgba(0,0,0,0.4); color: #fff; display: none; animation: fadeUp 0.6s ease; }
+.card.show { display: block; }
+.card.wide { max-width: 680px; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.logo { width: 70px; height: 70px; margin: 0 auto 12px; border-radius: 50%; background: linear-gradient(135deg, #ff9800, #ff5722); display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 5px 20px rgba(255,152,0,0.5); }
+h1 { text-align: center; font-size: 24px; font-weight: 700; }
+.sub { text-align: center; font-size: 14px; opacity: 0.8; margin: 5px 0 20px; }
+.field { position: relative; margin-top: 16px; }
+.field span { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 18px; }
+input { width: 100%; padding: 13px 14px 13px 44px; border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; background: rgba(255,255,255,0.15); color: #fff; font-size: 15px; font-family: inherit; transition: 0.3s; }
+input::placeholder { color: rgba(255,255,255,0.7); }
+input:focus { outline: none; border-color: #ff9800; background: rgba(255,255,255,0.22); box-shadow: 0 0 10px rgba(255,152,0,0.5); }
+input[type=date] { color-scheme: dark; }
+button { width: 100%; padding: 13px; margin-top: 22px; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; font-family: inherit; color: #fff; cursor: pointer; background: linear-gradient(135deg, #ff9800, #ff5722); transition: 0.3s; }
+button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,87,34,0.5); }
+.green { background: linear-gradient(135deg, #00c853, #009688); }
+.red { width: auto; margin: 0; padding: 8px 18px; font-size: 14px; background: linear-gradient(135deg, #e53935, #b71c1c); }
+.msg { margin-top: 14px; text-align: center; font-weight: 500; color: #ffcdd2; min-height: 20px; }
+.msg.ok { color: #b9f6ca; }
+.link { text-align: center; margin-top: 16px; font-size: 14px; }
+.link a { color: #ffb74d; font-weight: 600; cursor: pointer; }
+.link a:hover { text-decoration: underline; }
+.top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.top h2 { font-size: 18px; }
+.info { background: rgba(255,255,255,0.12); padding: 15px; border-radius: 12px; margin-bottom: 18px; line-height: 1.9; }
+table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 12px; }
+th, td { padding: 11px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.15); }
+th { background: rgba(255,152,0,0.85); }
+td { background: rgba(255,255,255,0.06); }
+.total td { font-weight: 700; background: rgba(255,255,255,0.18); }
+.low { color: #ff8a80; font-weight: 700; }
+.status { text-align: center; font-size: 22px; font-weight: 700; margin-top: 18px; padding: 12px; border-radius: 12px; }
+.pass { background: rgba(0,200,83,0.3); color: #b9f6ca; }
+.fail { background: rgba(229,57,53,0.3); color: #ffcdd2; }
+@media print { body { background: #fff; animation: none; } .bubble, .no-print { display: none !important; } .card { color: #000; background: #fff; box-shadow: none; backdrop-filter: none; } th { color: #fff; } }
